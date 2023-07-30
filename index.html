@@ -1,137 +1,90 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Rave Game Search Engine</title>
+    <title>Rave Game Search</title>
 
-	<!-- Favicon Import -->
-	<link rel="icon" type="text/css" href="img/favicon.png">
-	<link id="favicon" rel="shortcut icon" href="img/favicon.png">
-
-	<!-- CSS Import -->
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-
-	<!-- Share/Embed Content -->
-	<meta property="og:url" content="http://gamesearch.pages.dev/index.html" />
-	<meta property="og:type" content="search-page" />
-	<meta property="og:title" content="Rave Game Search Engine" />
-	<meta property="og:description" content="Find the safest free download links to your favorite games" />
-	<meta property="og:image" content="https://idleendeavor.github.io/gamesearch/img/favicon.png" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta property="og:type" content="website">
+    <meta property="twitter:title" content="Rave Game Search">
+    <meta property="og:title" content="Rave Game Search">
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:description" content="Find the safest free download links to your favorite Video Games">
+    <meta property="og:description" content="Find the safest free download links to your favorite Video Games">
+    <meta property="twitter:image" content="https://ravegamesearch.pages.dev/img/ravesearch.png">
+    <meta property="og:image" content="https://ravegamesearch.pages.dev/img/ravesearch.png">
+    <meta property="description" content="Find the safest free download links to your favorite Video Games">
+    <link href="img/favicon.png" rel="shortcut icon">
+    <meta name="theme-color" content="#F63F4D">
 </head>
-<!-- No Javascript Warning -->
-	<noscript> 
-		<div id="noscript-warning">Rave Game Search uses Javascript to provide its search results. Kindly enable Javascript on your browser and reload the page to restore usability.</div>
-	</noscript>
-
 <body>
+    <div class="container">
+        <!-- Engine Switcher -->
+        <div class="engine-swticher">
+            <a href="https://ravegamesearch.pages.dev">> Game Search</a>
+            <a href="https://ravebooksearch.com">Book Search</a>
+            <a href="https://ravesoftwaresearch.pages.dev">Software Search</a>
+        </div>
+        <!-- Search Box -->
+        <div class="maindiv">
+            <div class="searchlogo">
+                <img class="searchlogo" src="img/search-logo.png" onclick="location.href='index.html';">
+            </div>
+            <script>
+                (function() {
+                var cx = "001315572920893299880:p3yigpygfny";
+                var gcse = document.createElement("script");
+                gcse.type = "text/javascript";
+                gcse.async = true;
+                gcse.src = "https://cse.google.com/cse.js?cx=" + cx;
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(gcse, s);
+                })();
+                window.onload = function()
+                { 
+                var searchBox =  document.getElementById("gsc-i-id1");
+                searchBox.placeholder="Search for your favourite Games";
+                searchBox.title="Rave Game Search Engine"; 
+                }
+            </script>
+            <gcse:search class="searchbox"></gcse:search>
+        </div>
+    </div>
+    <!-- Games Found Counter -->
+    <div class="games-found">
+        <a class="count">0</a>
+        <a>Games Found</a>
+    </div>
+    <script type="text/javascript">
+		function updateCounter() {
+		    fetch('https://api.countapi.xyz/update/ravegamesearch/ravesearch/?amount=1')
+		        .then(res => res.json())
+		        .then(data => counterElement.innerHTML = data.value)
+		}
 
-<!-- Preloader -->
+		updateCounter()
 
-	<div class="preloader_bg">
-	    <div class="preloader"></div>
-	</div>
+		counterElement = document.getElementsByClassName('count')[0];
+	</script>
+    <!-- Terms of Use, Privacy Policy and GitHub Link -->
+    <div class="terms">
+        <a href="https://github.com/IdleEndeavor/gamesearch">GitHub |</a>
+        <a href="https://github.com/IdleEndeavor/gamesearch#privacy-policy">Privacy Policy |</a>
+        <a href="https://github.com/IdleEndeavor/gamesearch#terms-of-use">Terms of Use</a>
+    </div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        setTimeout(function(){
-            $('.preloader_bg').fadeToggle();
-        }, 1500);
-    </script>
-
-<!-- Slideout Menu -->
-
-	<input type="checkbox" id="slide" name="" value=""/>
-
-		<div class="container">
-
-			<label for="slide" class="toggle">☰</label>
-
-			<nav class="sidebar">
-
-				<ul>
-					<img src="img/favicon.png" onclick="location.href='index.html';">
-					<h4>Copyright <script type="text/javascript">document.write(new Date().getFullYear());</script><br>IdleEndeavor</h4>
-				</ul>
-
-			</nav>
-
-		</div>
-
-	
-<!-- Search Box -->
-
-	<div class="maindiv">
-
-		<div class="searchlogo">
-
-			<img class="searchlogo" src="img/search-logo.png">
-
-		</div>
-
-		<script>
-
-	     (function() {
-	       var cx = "d68970d8128fc4fd2";
-	       var gcse = document.createElement("script");
-	       gcse.type = "text/javascript";
-	       gcse.async = true;
-	       gcse.src = "https://cse.google.com/cse.js?cx=" + cx;
-	       var s = document.getElementsByTagName("script")[0];
-	       s.parentNode.insertBefore(gcse, s);
-	     })();
-	     window.onload = function()
-	     { 
-	       var searchBox =  document.getElementById("gsc-i-id1");
-	       searchBox.placeholder="Search for your favourite Games";
-	       searchBox.title="Rave Game Search Engine"; 
-	     }
-
-	   </script>
-
-	   <gcse:search class="searchbox"></gcse:search>       
-	   <p>Rave Game Search helps you find the best Completely Free and Safe Download Links to your favourite Video Games.<br>Happy Gaming!<br>If you like our service; kindly share it with your friends to help keep this project afloat.</p>    
-
-	   <div class="share">
-
-		   <div class="share-button">
-
-		   	<a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fravebooksearch.com&text=Rave%20Book%20Download%20Link%20Search%20Engine:%20http%3A%2F%2Fravebooksearch.com" target="_blank" title="Tweet" class="fab fa-twitter"></a>  	
-		   	<a href="mailto:?subject=Rave%20Book%20Download%20Link%20Search%20Engine&body=Find%20free%20and%20safe%20download%20links%20to%20all%20your%20favourite%20books:%20http%3A%2F%2Fravebooksearch.com" target="_blank" title="Send email"><i class="fas fa-envelope"></i></a>
-		    <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fravebooksearch.com&title=Rave%20Book%20Download%20Link%20Search%20Engine" target="_blank" title="Submit to Reddit"><i class="fab fa-reddit"></i></a>
-		    <a href="http://www.tumblr.com/share?v=3&u=http%3A%2F%2Fravebooksearch.com&quote=Rave%20Book%20Download%20Link%20Search%20Engine&s=" target="_blank" title="Post to Tumblr"><i class="fab fa-tumblr"></i></a>
-		    <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fravebooksearch.com&media=https://ravebooksearch.com/img/ravesearch-homepage-pic.png&description=Find%20free%20and%20safe%20download%20links%20to%20all%20your%20favourite%20books" target="_blank" title="Pin it" class="fab fa-pinterest"></a>
-
-		   </div>
-
-	   </div> 
-
-	   <div align="center">
-
-	   </div>
-
-	</div>
-        
-<!-- FAB Wheel -->
-
+    <!-- FAB Wheel -->
 	<div class="adminActions">
-
 		<input type="checkbox" name="adminToggle" class="adminToggle" />
-
-		<a class="adminButton" href="#!"><i class="fas fa-info"></i></a>
-
+		<a class="adminButton" href="#!"><i class="material-icons">lightbulb</i></a>
 		<div class="adminButtons">
-
-			<a href="https://github.com/IdleEndeavor/gamesearch" title="GitHub"><i class="fab fa-github"></i></a>
-			<a href="https://github.com/IdleEndeavor/gamesearch#terms-of-use" title="Terms"><i class="fas fa-file-signature"></i></a>
-			<a href="https://github.com/IdleEndeavor/booksearch#privacy-policy" title="Privacy"><i class="fas fa-lock"></i></a>
-
+			<a href="https://github.com/IdleEndeavor/gamesearch" title="GitHub"><i class="material-icons">code</i></a>
+			<a href="https://github.com/IdleEndeavor/gamesearch#terms-of-use" title="Terms"><i class="material-icons">gavel</i></a>
+			<a href="https://github.com/IdleEndeavor/gamesearch#privacy-policy" title="Privacy"><i class="material-icons">security</i></a>
 		</div>
-
 	</div>
-
 </body>
-
 </html>
